@@ -2,6 +2,24 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+class EquationField extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      equation: '',
+    };
+  }
+
+  render() {
+    return (
+      <div>
+        <input type="text"></input>
+      </div>
+    );
+  }
+}
+
 class CalculatorButton extends React.Component {
   constructor(props) {
     super(props);
