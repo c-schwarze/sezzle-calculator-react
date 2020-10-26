@@ -67,7 +67,7 @@ class Calculator extends React.Component {
                           action={this.props.addToEquation} />
                       </td>
                       <td><CalculatorButton
-                          value=" / "
+                          value="/"
                           display="÷"
                           action={this.props.addToEquation} />
                       </td>
@@ -89,7 +89,7 @@ class Calculator extends React.Component {
                           action={this.props.addToEquation} />
                       </td>
                       <td><CalculatorButton
-                          value=" * "
+                          value="*"
                           display="x"
                           action={this.props.addToEquation} />
                       </td>
@@ -111,7 +111,7 @@ class Calculator extends React.Component {
                           action={this.props.addToEquation} />
                       </td>
                       <td><CalculatorButton
-                          value=" - "
+                          value="-"
                           display="-"
                           action={this.props.addToEquation} />
                       </td>
@@ -132,7 +132,7 @@ class Calculator extends React.Component {
                           action={this.props.calculate} />
                       </td>
                       <td><CalculatorButton
-                          value=" + "
+                          value="+"
                           display="+"
                           action={this.props.addToEquation} />
                       </td>
@@ -159,9 +159,22 @@ class CalculatorApp extends React.Component {
   }
 
   addToEquation(newValue) {
-    this.setState({
-      equation: this.state.equation + newValue
-    })
+    // if newvalue is a number or a decimal, add it always.
+    if( !isNaN(newValue) || newValue == '.' ) {
+      this.setState({
+        equation: this.state.equation + newValue
+      })
+    // if its not a number and the last one is not a number (operator), then replace
+    } else if( isNaN(newValue) && isNaN(this.state.equation[this.state.equation.length - 1]) ) {
+      this.setState({
+        equation: this.state.equation.slice(0, -1) + newValue
+      })
+      // just add whatever else remains - should be the symbols adding to numbers.
+    } else {
+      this.setState({
+        equation: this.state.equation + newValue
+      })
+    }
   }
 
   clearEquation() {
@@ -171,11 +184,16 @@ class CalculatorApp extends React.Component {
   }
 
   calculate() {
+    let equation = this.state.equation;
+    // if the last thing is a operator or a decimal, remove it!
+    if( isNaN(equation[equation.length - 1]) ){
+        equation = equation.slice(0, -1);
+    }
     const oldHistory = [...this.state.history];
     // get new newValue
-    const newValue = eval(this.state.equation)
+    const newValue = eval(equation);
     // add new value to the history
-    oldHistory.unshift(this.state.equation + " = " + newValue)
+    oldHistory.unshift(equation + " = " + newValue);
 
     if( oldHistory.length > 10 ){
       // remove the end value
