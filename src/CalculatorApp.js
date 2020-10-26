@@ -44,7 +44,7 @@ class Calculator extends React.Component {
           <table class="calculator">
               <tbody>
                   <tr>
-                    <td colspan="4"><CalculatorButton
+                    <td colSpan="4"><CalculatorButton
                         display="Clear"
                         action={this.props.clearEquation} />
                     </td>
@@ -209,7 +209,7 @@ class CalculatorApp extends React.Component {
     return (
       <div>
           <CalculatorIntro />
-          <input type="text" class="equation-field" placeholder="Enter your equation" value={this.state.equation}></input>
+          <input type="text" class="equation-field" placeholder="Enter your equation" value={this.state.equation} readOnly></input>
           <Calculator
             addToEquation={this.addToEquation}
             clearEquation={this.clearEquation}
