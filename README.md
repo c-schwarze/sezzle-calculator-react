@@ -7,3 +7,15 @@ Currently, this is using React.js. I plan on setting this up  with GoLang for th
 To start the project in the project directory, you can run:
 
 ### `npm start`
+
+
+## Checklist
+
+- [x] Styled HTML/CSS
+- [x] Added Basic calculator functionality in React.js
+- [x] History calculations work
+- [x] Clean data
+- [ ] History calculations push to all other users
+- [ ] Connected to GoLang backend
+- [ ] Connected to MySQL server
+- [ ] Added additional data parts - comments, timestamps, users
