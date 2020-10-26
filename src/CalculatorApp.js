@@ -5,7 +5,7 @@ function CalculatorIntro() {
   return (
     <div>
       <h1>Sezzle Calculator</h1>
-      <p>by Caleb Schwarze</p>
+      <p>by <a href="https://github.com/c-schwarze">Caleb Schwarze</a></p>
       <p>Welcome to my Sezzle Calculator. Use the visual calculator to aid you in creating the equation. Push the equals button to
       send the equation to be processed.</p>
     </div>
