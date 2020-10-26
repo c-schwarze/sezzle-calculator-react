@@ -15,7 +15,7 @@ To start the project in the project directory, you can run:
 - [x] Added Basic calculator functionality in React.js
 - [x] History calculations work
 - [x] Clean data
-- [ ] History calculations push to all other users
 - [ ] Connected to GoLang backend
 - [ ] Connected to MySQL server
+- [ ] History calculations push to all other users, utilizing Go
 - [ ] Added additional data parts - comments, timestamps, users
