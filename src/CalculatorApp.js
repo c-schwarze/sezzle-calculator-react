@@ -1,6 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './CalculatorApp.css';
 
 
 class CalculatorButton extends React.Component {
@@ -17,7 +16,7 @@ class History extends React.Component {
   render() {
     return (
       <div>
-        <h1>History</h1>
+        <h1>Recent Calculations</h1>
         <ul>
         {this.props.history.map((value, index) => {
           return <li key={index}>{value}</li>
