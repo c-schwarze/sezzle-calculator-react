@@ -1,38 +1,30 @@
-.CalculatorApp {
+body {
+  background-color: beige;
+}
+
+input.equation-field {
+  width: 100%;
+  height: 1.5em;
   text-align: center;
+  font-size: 1.5em;
+  background-color: #84e3ff9e;
 }
 
-.CalculatorApp-logo {
-  height: 40vmin;
-  pointer-events: none;
+.calculator {
+  padding-top: 1em;
+  margin: auto;
+  height: 20em;
+  width: 20em;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .CalculatorApp-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.CalculatorApp-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.btn-calculator {
+  background-color: #000000d1;
   color: white;
+  width: 100%;
+  height: 100%;
+  font-size: 1.5em;
 }
 
-.CalculatorApp-link {
-  color: #61dafb;
-}
-
-@keyframes CalculatorApp-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn-container {
+  height: 100%;
 }

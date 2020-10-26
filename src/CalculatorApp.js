@@ -1,12 +1,23 @@
 import React from 'react';
 import './CalculatorApp.css';
 
+function CalculatorIntro() {
+  return (
+    <div>
+      <h1>Sezzle Calculator</h1>
+      <p>by Caleb Schwarze</p>
+      <p>Welcome to my Sezzle Calculator. Either type in an equation using numbers and the 4 basic operators, or
+      use the visual calculator to aid you in creating the equation. Push the equals button to
+      send the equation to be processed.</p>
+    </div>
+  )
+}
 
 class CalculatorButton extends React.Component {
   render() {
     return (
-      <div>
-      <button type="button" onClick={() => this.props.action(this.props.value)}>{this.props.display}</button>
+      <div class="btn-container">
+      <button type="button" class="btn-calculator" onClick={() => this.props.action(this.props.value)}>{this.props.display}</button>
       </div>
     )
   }
@@ -31,7 +42,7 @@ class Calculator extends React.Component {
   render() {
     return (
       <div>
-          <table id="visual-calculator">
+          <table class="calculator">
               <tbody>
                   <tr>
                     <td colspan="4"><CalculatorButton
@@ -107,13 +118,13 @@ class Calculator extends React.Component {
                   </tr>
                   <tr>
                       <td><CalculatorButton
-                          value="0"
-                          display="0"
+                          value="."
+                          display="."
                           action={this.props.addToEquation} />
                       </td>
                       <td><CalculatorButton
-                          value="."
-                          display="."
+                          value="0"
+                          display="0"
                           action={this.props.addToEquation} />
                       </td>
                       <td><CalculatorButton
@@ -172,14 +183,16 @@ class CalculatorApp extends React.Component {
     }
 
     this.setState({
-      history: oldHistory
+      history: oldHistory,
+      equation: '',
     })
   }
 
   render() {
     return (
       <div>
-          <input type="text" placeholder="Enter your equation" value={this.state.equation}></input>
+          <CalculatorIntro />
+          <input type="text" class="equation-field" placeholder="Enter your equation" value={this.state.equation}></input>
           <Calculator
             addToEquation={this.addToEquation}
             clearEquation={this.clearEquation}
