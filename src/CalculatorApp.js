@@ -28,7 +28,7 @@ class History extends React.Component {
     return (
       <div>
         <h1>Recent Calculations</h1>
-        <ul>
+        <ul class="history-list">
         {this.props.history.map((value, index) => {
           return <li key={index}>{value}</li>
         })}

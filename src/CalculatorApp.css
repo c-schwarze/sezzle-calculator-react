@@ -1,5 +1,6 @@
 body {
   background-color: beige;
+  padding: 0% 5% 5% 5%;
 }
 
 input.equation-field {
@@ -27,4 +28,8 @@ input.equation-field {
 
 .btn-container {
   height: 100%;
+}
+
+.history-list {
+  font-size: 1.25em;
 }
