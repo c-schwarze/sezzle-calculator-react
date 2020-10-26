@@ -6,8 +6,7 @@ function CalculatorIntro() {
     <div>
       <h1>Sezzle Calculator</h1>
       <p>by Caleb Schwarze</p>
-      <p>Welcome to my Sezzle Calculator. Either type in an equation using numbers and the 4 basic operators, or
-      use the visual calculator to aid you in creating the equation. Push the equals button to
+      <p>Welcome to my Sezzle Calculator. Use the visual calculator to aid you in creating the equation. Push the equals button to
       send the equation to be processed.</p>
     </div>
   )
